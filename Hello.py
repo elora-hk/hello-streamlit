@@ -46,6 +46,13 @@ def run():
     """
     )
 
+    title = st.text_input("What's your story?", help="Write about 10 words to describe the idea of story")
+    if title is not None:
+      st.markdown(f"""
+        # {title}
+        """
+      )
+
 
 if __name__ == "__main__":
     run()
