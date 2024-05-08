@@ -41,15 +41,13 @@ Mrs. Sweet, the kind shop owner, rushed to Rosie's side. "Oh dear, it seems we h
 2. What did Rosie learn from her adventure in the Candy Kingdom?
 3. What is the name of the kind shop owner who helped Rosie clean up the mess?
 """
-  for line in story.splitlines():
-    time.sleep(0.5)
-    yield(line+"\n")
+  for char in story:
+    time.sleep(0.01)
+    yield(char)
 
 def run():
     st.set_page_config(page_title="✨ Dreamweaver - Bedtime Stories for Kids ✨", page_icon=":crescent_moon:")
-
     st.title("✨ Dreamweaver ✨")
-
     st.markdown("""
 🌙 Create enchanting bedtime stories to delight your little ones! 👨‍👩‍👧‍👦
 📚 Unleash your imagination and craft personalized tales that will send your kids off to sweet dreams. 💤
@@ -61,7 +59,6 @@ def run():
     # Display the parent's input
     if parent_input:      
       st.write_stream(generate_story(parent_input))
-
 
 if __name__ == "__main__":
     run()
